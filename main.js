@@ -84,22 +84,28 @@ function updateDetails(forStopId) {
 };
 
 
+var showColon = true;
+
 (function updateTime() {
   var now = new Date();
 
   function pad(int) {
     return int.toString().padStart(2, '0')
   }
+    
+
 
   var colon = ":";
 
-  if (now.getSeconds() % 2) {
+  if (!showColon) {
     colon = " ";
   };
+  showColon = !showColon;
+
 
   document.querySelector(".time")
     .textContent = `Time is ${pad(now.getHours())}${colon}${pad(now.getMinutes())}`;
-  setTimeout(updateTime, 1000)
+  setTimeout(updateTime, 500)
 })();
 
 
