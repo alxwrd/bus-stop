@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://alxwrd.github.io/bus-stop">
-    <img src="https://i.imgur.com/9b7kqkw.png" width="75%">
+    <img src="https://i.imgur.com/FjWSR99.png" width="75%">
   </a>
 </p>
 
