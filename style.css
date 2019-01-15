@@ -14,6 +14,11 @@ body {
   width: 75%;
 }
 
+.time {
+  display: block;
+  text-align: center;
+}
+
 .col {
   flex: auto;
   text-align: center;
@@ -23,7 +28,7 @@ body {
   padding: 0.5vw;
 }
 
-.row {
+.large-text {
   font-size: 5vw;
 }
 
