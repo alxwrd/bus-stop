@@ -7,11 +7,13 @@ body {
   color: #F27545;
   text-shadow: 1px -1px 1vw #ba6334, 1px -1px 1vh #ba6334;
   background-color: #1A1A1A;
+  padding: 2vmax;
 }
 
 .sign {
   display: flex;
-  width: 75%;
+  width: 90%;
+  margin:0 auto;
 }
 
 .time {
