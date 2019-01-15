@@ -1,0 +1,36 @@
+
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
+body {
+  font-family: 'VT323', monospace;
+  font-size: 3vw;
+  color: #F27545;
+  text-shadow: 1px -1px 1vw #ba6334, 1px -1px 1vh #ba6334;
+  background-color: #1A1A1A;
+}
+
+.sign {
+  display: flex;
+  width: 75%;
+}
+
+.col {
+  flex: auto;
+  text-align: center;
+}
+
+.space {
+  padding: 0.5vw;
+}
+
+.row {
+  font-size: 4vw;
+}
+
+#service .row {
+  text-align: left;
+}
+
+#duein .row {
+  text-align: right;
+}
