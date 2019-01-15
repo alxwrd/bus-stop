@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=VT323');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 body {
   font-family: 'VT323', monospace;
@@ -25,7 +26,15 @@ body {
 
 .col {
   flex: auto;
-  text-align: center;
+  text-align: left;
+}
+
+.title {
+  font-family: 'Open Sans', sans-serif;
+  color: #EFEFEF;
+  text-shadow: none;
+  font-size: 2vmax;
+  font-weight: bold;
 }
 
 .space {
@@ -40,6 +49,6 @@ body {
   text-align: left;
 }
 
-#duein .row {
+#duein {
   text-align: right;
 }

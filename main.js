@@ -1,9 +1,9 @@
 
-const url = "https://cors-anywhere.herokuapp.com/https://www.trentbarton.co.uk/RTILiveTimings.aspx?m=GetRTI";
+const url = "https://cors-anywhere.herokuapp.com/https://www.trentbarton.co.uk/RTILiveTimings.aspx?m=GetRtiFull";
 
 
 (function updateDetails() {
-  fetch(url + "&service=65&stop=15717",
+  fetch(url + "&stop=15717",
     {
       method: "GET"
     })
@@ -17,9 +17,11 @@ const url = "https://cors-anywhere.herokuapp.com/https://www.trentbarton.co.uk/R
         })
       }
 
-      if (data.result) {
-        data.result.forEach((bus) => {
+      if (data && data[0] && data[0].result) {
+        document.title = data[0].stopName
+        data[0].result.forEach((bus) => {
           addRowTo("service", bus.serviceDisplayName)
+          addRowTo("destination", bus.destination)
           addRowTo("duein", bus.dueIn)
         })
       }
