@@ -3,16 +3,6 @@ const url = "https://cors-anywhere.herokuapp.com/https://www.trentbarton.co.uk/R
 
 
 (function updateDetails() {
-  var now = new Date();
-
-  function pad(int) {
-    return int.toString().padStart(2, '0')
-  }
-
-  document.querySelector(".time")
-    .textContent = `Time is ${pad(now.getHours())}:${pad(now.getMinutes())}`;
-
-
   fetch(url + "&service=65&stop=15717",
     {
       method: "GET"
@@ -35,6 +25,25 @@ const url = "https://cors-anywhere.herokuapp.com/https://www.trentbarton.co.uk/R
       }
       setTimeout(updateDetails, 15000)
     })
+})();
+
+
+(function updateTime() {
+  var now = new Date();
+
+  function pad(int) {
+    return int.toString().padStart(2, '0')
+  }
+
+  var colon = ":";
+
+  if (now.getSeconds() % 2) {
+    colon = " ";
+  };
+
+  document.querySelector(".time")
+    .textContent = `Time is ${pad(now.getHours())}${colon}${pad(now.getMinutes())}`;
+  setTimeout(updateTime, 1000)
 })();
 
 
