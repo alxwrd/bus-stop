@@ -93,15 +93,12 @@ var showColon = true;
     return int.toString().padStart(2, '0')
   }
     
-
-
   var colon = ":";
 
   if (!showColon) {
     colon = " ";
   };
   showColon = !showColon;
-
 
   document.querySelector(".time")
     .textContent = `Time is ${pad(now.getHours())}${colon}${pad(now.getMinutes())}`;
