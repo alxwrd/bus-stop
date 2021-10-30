@@ -1,9 +1,9 @@
 
-const corsProxy = "https://cors-anywhere.herokuapp.com/";
-const rootUrl = "https://www.trentbarton.co.uk/RTILiveTimings.aspx";
+const corsProxy = "https://api.allorigins.win/get?url=";
+const rootUrl = encodeURIComponent("https://www.trentbarton.co.uk/RTILiveTimings.aspx");
 
-const getAllStops = "?m=GetStopsForMap&isService=false";
-const getStop = "?m=GetRtiFull&stop=";
+const getAllStops = encodeURIComponent("?m=GetStopsForMap&isService=false");
+const getStop = encodeURIComponent("?m=GetRtiFull&stop=");
 
 
 function getStoreageItem(name, defaultValue) {
@@ -42,12 +42,13 @@ function setStoreageItem(name, value) {
     })
     .then(resp => resp.json())
     .then(data => {
+      data = JSON.parse(data.contents);
       data = data.filter(stopData => stopData.C === stopCode);
 
       if (data.length) {
         var stopDetails = data[0];
       } else {
-        var stopDetails = {C: "ntmatjtp", Id: 15717}
+        var stopDetails = {C: "ntmatgjw", Id: 15896}
       };
 
       updateDetails(stopDetails.Id);
@@ -63,6 +64,7 @@ function updateDetails(forStopId) {
     })
     .then((resp) => resp.json())
     .then((data) => {
+      data = JSON.parse(data.contents);
       let rows = document.querySelectorAll(".row")
 
       if (rows) {
